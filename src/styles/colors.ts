@@ -1,0 +1,1 @@
+export const linkBlue = '#0366d6';
