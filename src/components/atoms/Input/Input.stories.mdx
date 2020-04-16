@@ -1,0 +1,40 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Input from "./Input.component";
+
+<Meta title="Input" component={Input} />
+
+# Input Component
+
+This is a pretty straight forward Input that comes with the variants sufficient for the project.
+
+## Implementation
+
+<Preview>
+  <Story name="default">
+    <Input placeholder="Basic input with placeholder" />
+  </Story>
+</Preview>
+
+The Input component can work by itself but most likely you'll need `value` and `onChange` props.
+
+Example usage:
+
+```tsx
+const [inputValue, setInputValue] = useState('');
+
+function handleInput(ev) {
+    setInputValue(ev.target.value);
+}
+
+render(){
+   return (
+    /*...*/
+    <Input value={valueInput} onChange={handleInput} />
+    /*...*/
+   )
+}
+```
+
+## Props
+
+<Props of={Input} />

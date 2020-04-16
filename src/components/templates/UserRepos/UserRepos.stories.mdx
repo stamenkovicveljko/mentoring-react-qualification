@@ -1,0 +1,65 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import UserRepos from "./UserRepos.component";
+
+<Meta title="UserRepos" component={UserRepos} />
+
+# UserRepos Component
+
+Creates searchable list of specified user's repos from the github.
+
+## Implementation
+
+It relies on `user` and `repos` to be defined.
+
+_User model_
+
+```ts
+interface IGithubUser {
+  name: string;
+  login: string;
+  avatar_url: string;
+  html_url: string;
+}
+```
+
+_Repo model_
+
+```ts
+interface IGithubRepo {
+  name: string;
+  html_url: string;
+}
+```
+
+<Preview>
+  <Story name="default">
+    <UserRepos
+      user={{
+        name: "Some user",
+        login: "storiez",
+        avatar_url:
+          "https://velikirecnik.com/wp-content/uploads/2017/11/Avatar.jpeg",
+        html_url:
+          "https://velikirecnik.com/wp-content/uploads/2017/11/Avatar.jpeg",
+      }}
+      repos={[
+        {
+          name: "some repo 1",
+          html_url: "https://google.com",
+        },
+        {
+          name: "some repo 2",
+          html_url: "https://google.com",
+        },
+        {
+          name: "some repo 3",
+          html_url: "https://google.com",
+        },
+      ]}
+    />
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={UserRepos} />

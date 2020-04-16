@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import * as Styled from "./Input.styles";
 
 interface Props extends React.HTMLAttributes<HTMLInputElement> {
@@ -8,14 +8,18 @@ interface Props extends React.HTMLAttributes<HTMLInputElement> {
 }
 
 const Input = (props: Props) => {
-  const { value = "", onChange, placeholder, ...rest } = props;
+  const { value = "", onChange = () => {}, placeholder, ...rest } = props;
+  const [stateValue, setStateValue] = useState("");
 
   return (
     <Styled.Container>
       <input
         {...rest}
-        value={value}
-        onChange={onChange}
+        value={value || stateValue}
+        onChange={(ev) => {
+          onChange(ev);
+          setStateValue(ev.target.value);
+        }}
         placeholder={placeholder}
       />
     </Styled.Container>

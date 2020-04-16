@@ -1,0 +1,32 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import List from "./List.component";
+
+<Meta title="List" component={List} />
+
+# List Component
+
+List component with basic styles.
+Provide `items` - which can be any `JSX` array and it works.
+
+## Implementation
+
+<Preview>
+  <Story name="default">
+    <List items={["list item 1", "list item 2", "list item 3"]} />
+  </Story>
+</Preview>
+
+As mentioned in the begining it can render any JSX elements.
+E.g.
+
+```jsx
+<List
+  items={Array.from({ length: 5 }).map((_, i) => (
+    <span>JSX list item {i + 1} </span>
+  ))}
+/>
+```
+
+## Props
+
+<Props of={List} />

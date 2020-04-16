@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import * as React from 'react';
 import { StyledButton } from "./Button.styles";
 
 interface Props {
@@ -8,15 +8,17 @@ interface Props {
   children?: React.ReactNode;
 }
 
-export default function Button({
+function Button({
   type = "button",
   variant = "standard",
   onClick = () => {},
   children,
-}: Props): ReactElement {
+}: Props): React.ReactElement {
   return (
     <StyledButton<any> onClick={onClick} variant={variant} type={type}>
       {children}
     </StyledButton>
   );
 }
+
+export default Button;

@@ -9,7 +9,7 @@ import * as Styled from "./UserRepos.styles";
 
 interface Props {
   user: IGithubUser;
-  repos: IGithubRepo[];
+  repos: Array<IGithubRepo>;
 }
 
 const UserRepos = ({ user, repos }: Props) => {

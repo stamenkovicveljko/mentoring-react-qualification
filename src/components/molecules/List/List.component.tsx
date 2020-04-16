@@ -6,7 +6,7 @@ interface Props {
 }
 
 function List(props: Props) {
-  const { items } = props;
+  const { items = [] } = props;
   return (
     <Styled.Ul>
       {items.map((item, ind) => (

@@ -3,6 +3,7 @@ import { resetUl } from "../../../styles/resets";
 
 export const Ul = styled.ul`
   ${resetUl};
+  font: inherit;
 
   > li {
     padding: 10px;

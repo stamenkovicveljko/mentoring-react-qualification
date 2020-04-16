@@ -1,0 +1,32 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Button from "./Button.component";
+
+<Meta title="Button" component={Button} />
+
+# Button Component
+
+This is a pretty straight forward button that comes with the variants sufficient for the project.
+
+## Implementation
+
+<Preview>
+  <Story name="default">
+    <Button>Default(standard) button</Button>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="primary">
+    <Button variant="primary">Primary button</Button>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="secondary">
+    <Button variant="secondary">Secondary button</Button>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Button} />

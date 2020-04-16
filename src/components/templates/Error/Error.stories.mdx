@@ -1,0 +1,35 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Error from "./Error.component";
+import Link from "../../atoms/Link/Link.component";
+
+<Meta title="Error" component={Error} />
+
+# Error Component
+
+Basic error component that display `404 - Not Found` by default.
+
+## Implementation
+
+Simply change `title`, `subtitle` or supply children to get customized error.
+
+### Default
+
+<Preview>
+  <Story name="default">
+    <Error />
+  </Story>
+</Preview>
+
+### Custom error
+
+<Preview>
+  <Story name="401 - unauthorized">
+    <Error title="There was an error." subtitle="401 - Unauthorized">
+      Click on this <Link to="https://google.com">link</Link> to login.
+    </Error>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Error} />

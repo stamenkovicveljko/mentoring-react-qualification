@@ -9,6 +9,7 @@ export const Container = styled.div`
     height: 240px;
     flex: 0 0 auto;
     border-radius: 50%;
+    object-fit: cover;
   }
 
   > div {

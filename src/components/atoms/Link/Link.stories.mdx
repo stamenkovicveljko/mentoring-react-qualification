@@ -1,0 +1,28 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Link from "./Link.component";
+
+<Meta title="Link" component={Link} />
+
+# Link Component
+Basic `<a>` element implementation that can work for both inner and outer routes/links.
+
+## Implementation
+
+<Preview>
+  <Story name="default">
+    <Link to="https://google.com">Google</Link>
+  </Story>
+</Preview> 
+
+***Note:***
+
+You can use link without specifying child.
+
+<Preview>
+  <Story name="without child">
+    <Link to="https://google.com"/>
+  </Story>
+</Preview>
+
+## Props
+<Props of={Link} />
