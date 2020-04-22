@@ -1,5 +1,5 @@
 import React from "react";
-import GithubUserRepos from "./components/pages/GithubUserRepos/GithubUserRepos.component";
+import GithubUserRepos from "./pages/GithubUserRepos/GithubUserRepos.page";
 
 function App() {
   return <GithubUserRepos />;

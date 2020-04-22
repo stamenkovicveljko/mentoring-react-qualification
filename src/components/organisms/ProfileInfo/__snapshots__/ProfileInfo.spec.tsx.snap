@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProfileInfo renders as expected 1`] = `
+<div
+  className="sc-AxjAm whBCV"
+>
+  <img
+    alt="Profile img"
+    src="https://velikirecnik.com/wp-content/uploads/2017/11/Avatar.jpeg"
+  />
+  <div>
+    <div>
+      <span>
+        Username
+      </span>
+      <span
+        className="user-data"
+      >
+        storiez
+      </span>
+    </div>
+    <div>
+      <span>
+        Name
+      </span>
+      <span
+        className="user-data"
+      >
+        Some user
+      </span>
+    </div>
+    <div>
+      <span>
+        Github Profile:
+      </span>
+      <span
+        className="user-data"
+      >
+        <a
+          className="sc-AxirZ ldeUjV"
+          href="https://velikirecnik.com/wp-content/uploads/2017/11/Avatar.jpeg"
+        >
+          https://velikirecnik.com/wp-content/uploads/2017/11/Avatar.jpeg
+        </a>
+      </span>
+    </div>
+  </div>
+</div>
+`;

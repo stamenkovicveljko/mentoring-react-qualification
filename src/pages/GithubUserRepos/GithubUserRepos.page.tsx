@@ -1,19 +1,12 @@
-import React, { ReactElement, useState, useEffect } from "react";
-import IGithubRepo from "../../../models/GithubRepo";
-import IGithubUser from "../../../models/GithubUser";
-import endpoints from "../../../api/endpoints";
-import UserRepos from "../../templates/UserRepos/UserRepos.component";
-import ErrorTemplate from "../../templates/Error/Error.component";
+import React, { ReactElement, useState } from "react";
+import IGithubRepo from "../../models/GithubRepo";
+import IGithubUser from "../../models/GithubUser";
+import UserRepos from "../../components/templates/UserRepos/UserRepos.component";
+import ErrorTemplate from "../../components/templates/Error/Error.component";
 import * as Styled from "./GithubUserRepos.styles";
-import Input from "../../atoms/Input/Input.component";
-import Button from "../../atoms/Button/Button.component";
-
-function handleErrors(response: Response) {
-  if (!response.ok) {
-    throw Error(response.statusText);
-  }
-  return response;
-}
+import Input from "../../components/atoms/Input/Input.component";
+import Button from "../../components/atoms/Button/Button.component";
+import api from "../../api";
 
 export default function GithubUserRepos(): ReactElement {
   const [repos, setRepos] = useState<IGithubRepo[]>([]);
@@ -24,33 +17,17 @@ export default function GithubUserRepos(): ReactElement {
 
   const [currentUser, setCurrentUser] = useState<IGithubUser | null>();
 
-  useEffect(() => {
+  React.useEffect(() => {
     const getRepos = async () => {
       setError(false);
-      const reqOptions = {
-        headers: {
-          Accept: "application/json",
-        },
-      };
-
       try {
         setLoading(true);
         const [user, repositories] = await Promise.all<
           IGithubUser,
           IGithubRepo[]
         >([
-          (
-            await fetch(
-              endpoints.githubUserEndpoint(selectedUsername),
-              reqOptions
-            ).then(handleErrors)
-          ).json(),
-          (
-            await fetch(
-              endpoints.githubRepoEndpoint(selectedUsername),
-              reqOptions
-            ).then(handleErrors)
-          ).json(),
+          api.github.getUser(selectedUsername),
+          api.github.getRepos(selectedUsername),
         ]);
 
         setCurrentUser(user);

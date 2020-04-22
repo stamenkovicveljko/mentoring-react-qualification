@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link renders as expected 1`] = `
+<a
+  className="sc-AxjAm gvFFYS"
+  href="https://google.com"
+>
+  sample link
+</a>
+`;

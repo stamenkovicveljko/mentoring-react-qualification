@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input renders as expected 1`] = `
+<div
+  className="sc-AxjAm jQZEFe"
+>
+  <input
+    onChange={[Function]}
+    placeholder="test input"
+    value=""
+  />
+</div>
+`;
